@@ -1,6 +1,5 @@
 ﻿using EspacioCalculadora;
 // See https://aka.ms/new-console-template for more information
-Console.WriteLine("Hello, World!");
 Calculadora numerito = new Calculadora();
 
 string input;
@@ -8,7 +7,6 @@ double a;
 do
 {
     Console.WriteLine("Escriba la operación a realizar suma, resta, mult, div, limpiar o exit para salir");
-    WriteLine(numerito.Resultado)
     input = Console.ReadLine();
     switch (input)
     {
@@ -37,8 +35,8 @@ do
             }
             break;
             case "limpiar":
-            a = LeerNumero();
             numerito.Limpiar();
+            Console.WriteLine("Limpiado!");
             break;
         case "exit":
             break;
