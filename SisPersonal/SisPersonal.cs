@@ -35,13 +35,13 @@ namespace SisPersonal{
         {
             if (System.DateTime.Today.Month > fechaDeNacimiento.Month)
             {
-                return System.DateTime.Today.Year - fechaDeNacimiento.Year + 1;
+                return System.DateTime.Today.Year - fechaDeNacimiento.Year;
             }
             if (System.DateTime.Today.Month == fechaDeNacimiento.Month && System.DateTime.Today.Day >= fechaDeNacimiento.Day)
             {
-                return System.DateTime.Today.Year - fechaDeNacimiento.Year + 1;
+                return System.DateTime.Today.Year - fechaDeNacimiento.Year;
             }
-            return System.DateTime.Today.Year - fechaDeNacimiento.Year;
+            return System.DateTime.Today.Year - fechaDeNacimiento.Year - 1;
         }
 
         public int Jubilarse()
@@ -53,13 +53,13 @@ namespace SisPersonal{
         {
             if (System.DateTime.Today.Month > ingreso.Month)
             {
-                return System.DateTime.Today.Year - ingreso.Year + 1;
+                return System.DateTime.Today.Year - ingreso.Year;
             }
             if (System.DateTime.Today.Month == ingreso.Month && System.DateTime.Today.Day >= ingreso.Day)
             {
-                return System.DateTime.Today.Year - ingreso.Year + 1;
+                return System.DateTime.Today.Year - ingreso.Year;
             }
-            return System.DateTime.Today.Year - ingreso.Year;
+            return System.DateTime.Today.Year - ingreso.Year - 1;
         }
 
         public double salarioFinal()
@@ -75,12 +75,10 @@ namespace SisPersonal{
                 adicional = 0.25;
             }
 
-                Console.WriteLine(adicional);
             if (cargo == Cargo.Ingeniero || cargo == Cargo.Especialista)
             {
                 adicional *= 1.5;
             }
-                Console.WriteLine(adicional);
             if (estadoCivil == 'c' || estadoCivil == 'C')
             {
                 return sueldoBasico * (1+adicional) + 150000;
